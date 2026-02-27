@@ -28,7 +28,7 @@
 
     <style>
         .bg-wrapper {
-            background-image: url('<?= base_url("image/cafe.jpg") ?>') !important;
+            background-image: url(https://i.pinimg.com/1200x/6e/ec/29/6eec294746c384ec1aa8c91ffe6cfa27.jpg) !important;
             background-size: cover; 
             background-position: center;
             background-attachment: fixed;

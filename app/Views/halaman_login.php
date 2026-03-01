@@ -34,6 +34,7 @@
             <h2>Login Kasir</h2>
 
             <?php if(session()->getFlashdata('error')) ?>
+                <div class="error-msg"></div>
         </div>
 
     </div>

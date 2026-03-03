@@ -36,8 +36,6 @@
         }
 
         h2 { text-align: center; color: var(--dark-coffee); margin-bottom: 30px; }
-
-        /* Form Styling */
         .form-group {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr auto;
@@ -65,8 +63,6 @@
         }
 
         button:hover { background: var(--dark-coffee); }
-
-        /* Table Styling */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -119,10 +115,11 @@
                         <th>Nama Menu</th>
                         <th>Kategori</th>
                         <th>Harga</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?= $no = 1; foreach($menu as $m); ?>
+                    <?php $no = 1; foreach($menu as $m): ?>
                     <tr>
                         <td><?= $no++ ?></td>
                         <td><strong><?= $m['nama_menu'] ?></strong></td>
@@ -132,6 +129,9 @@
                             </span>
                         </td>
                         <td>Rp <?= number_format($m['harga'], 0, ',', '.') ?></td>
+                        <td>
+                            <a href="<?= base_url('hapus_menu/'.$m['id']) ?>" onclick="return confirm(''Yakin Ingin Menghapusnya?)">Hapus</a>
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>

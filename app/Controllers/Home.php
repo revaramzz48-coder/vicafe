@@ -1,18 +1,13 @@
-<?php
+<?php namespace App\Controllers;
+use App\Models\MenuModel;
 
-namespace App\Controllers;
-
-class Home extends BaseController
-{
-    public function index(): string
-    {
-        return view('welcome_message');
-    }
+class Home extends BaseController {
+    public function index(): string { return view('welcome_message'); }
 
     public function cafe()
     {
         $menuModel = new \App\Models\MenuModel();
-        $data['semua_menu'] = $menuModel->final();
+        $data['semua_menu'] = $menuModel->findAll();
 
         return view('tampilan_cafe', $data);
     }
@@ -25,7 +20,6 @@ class Home extends BaseController
     public function auth ()
     {
         $password = $this->request->getPost('pass');
-
         if ($password == 'adminenak') {
             return redirect()->to('/dashboard');
         } else {
@@ -36,8 +30,7 @@ class Home extends BaseController
     public function dashboard()
     {
         $model = new \App\Models\MenuModel();
-        $data['semua_menu'] = $model->findAll();
-
+        $data['menu'] = $model->findAll();
         return view('dashboard_kasir', $data);
     }
 
@@ -50,6 +43,13 @@ class Home extends BaseController
             'kategori' => $this->request->getPost('kategori'),
         ]);
 
+        return redirect()->to('/dashboard');
+    }
+
+    public function hapus_menu($id)
+    {
+        $model = new \App\Models\MenuModel();
+        $model->delete($id);
         return redirect()->to('/dashboard');
     }
 }

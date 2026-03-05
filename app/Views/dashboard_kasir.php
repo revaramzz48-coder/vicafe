@@ -99,12 +99,12 @@
             <h2>☕ Management Menu ViCafe</h2>
 
             <form action="<?= base_url('simpan_menu') ?>" method="post" class="form-group">
-                <input type="text" name="nama" placeholder="Nama Menu (Contoh: Caramel Latte)" required>
-                <input type="number" name="harga" placeholder="Harga" required>
+                <input type="text" name="nama" placeholder="Nama Menu (Contoh: Caramel Latte)" required><br>
+                <input type="number" name="harga" placeholder="Harga" required><br>
                 <select name="kategori">
                     <option value="Makanan">Makanan</option>
                     <option value="Minuman">Minuman</option>
-                </select>
+                </select><br>
                 <button type="submit">Tambah</button>
             </form>
 
@@ -119,7 +119,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $no = 1; foreach($menu as $m): ?>
+                    <?php $no = 1; foreach($semua_menu as $m): ?>
                     <tr>
                         <td><?= $no++ ?></td>
                         <td><strong><?= $m['nama_menu'] ?></strong></td>

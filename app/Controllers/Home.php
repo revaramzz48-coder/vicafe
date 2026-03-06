@@ -28,28 +28,22 @@ class Home extends BaseController {
     }
 
     public function dashboard()
-    {
-        $model = new \App\Models\MenuModel();
-        $data['menu'] = $model->findAll();
-        return view('dashboard_kasir', $data);
-    }
+{
+    $model = new \App\Models\MenuModel();
+    $data['semua_menu'] = $model->findAll();
+    
+    return view('dashboard_kasir', $data);
+}
 
-    public function simpan_menu()
-    {
-        $model = new \App\Models\MenuModel();
-        $model->save([
-            'nama_menu' => $this->request->getPost('nama'),
-            'harga' => $this->request->getPost('harga'),
-            'kategori' => $this->request->getPost('kategori'),
-        ]);
-
-        return redirect()->to('/dashboard');
-    }
-
-    public function hapus_menu($id)
-    {
-        $model = new \App\Models\MenuModel();
-        $model->delete($id);
-        return redirect()->to('/dashboard');
-    }
+public function simpan_menu()
+{
+    $model = new \App\Models\MenuModel();
+    $model->save([
+        'nama_menu' => $this->request->getPost('nama'),
+        'harga'     => $this->request->getPost('harga'),
+        'kategori'  => $this->request->getPost('kategori'),
+    ]);
+    
+    return redirect()->to('/dashboard');
+}
 }

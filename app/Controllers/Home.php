@@ -6,7 +6,7 @@ class Home extends BaseController {
 
     public function cafe()
     {
-        $menuModel = new \App\Models\MenuModel();
+        $menuModel = new MenuModel();
         $data['semua_menu'] = $menuModel->findAll();
 
         return view('tampilan_cafe', $data);
@@ -21,29 +21,35 @@ class Home extends BaseController {
     {
         $password = $this->request->getPost('pass');
         if ($password == 'adminenak') {
-            return redirect()->to('/dashboard');
+            return redirect()->to(base_url('/dashboard'));
         } else {
             return redirect()->back()->with('error', 'password salah!');
         }
     }
 
     public function dashboard()
-{
-    $model = new \App\Models\MenuModel();
-    $data['semua_menu'] = $model->findAll();
-    
-    return view('dashboard_kasir', $data);
-}
+    {
+        $model = new \App\Models\MenuModel();
+        $data['menu'] = $model->findAll();
+        return view('dashboard_kasir', $data);
+    }
 
-public function simpan_menu()
-{
-    $model = new \App\Models\MenuModel();
-    $model->save([
-        'nama_menu' => $this->request->getPost('nama'),
-        'harga'     => $this->request->getPost('harga'),
-        'kategori'  => $this->request->getPost('kategori'),
-    ]);
-    
-    return redirect()->to('/dashboard');
-}
+    public function simpan_menu()
+    {
+        $model = new \App\Models\MenuModel();
+        $model->save([
+            'nama_menu' => $this->request->getPost('nama'),
+            'harga' => $this->request->getPost('harga'),
+            'kategori' => $this->request->getPost('kategori'),
+        ]);
+
+        return redirect()->to('/dashboard');
+    }
+
+    public function hapus_menu($id)
+    {
+        $model = new \App\Models\MenuModel();
+        $model->delete($id);
+        return redirect()->to('/dashboard');
+    }
 }

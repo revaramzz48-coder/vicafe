@@ -17,7 +17,7 @@
 <body>
 
 <div class="hero">
-    <h1>Selamat Datang di ViCafe</h1>
+    <h1>Selamat Datang di ViCafe👋</h1>
     <p>Nikmati pilihan kopi dan camilan terbaik kami</p>
     <a href="<?= base_url('login') ?>" class="btn btn-outline-light btn-sm">Admin Login</a>
 </div>

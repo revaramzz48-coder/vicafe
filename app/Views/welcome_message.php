@@ -16,8 +16,8 @@
 <body>
     <div class="bg-wrapper">
         <div class="glass-card">
-            <h1>Selamat Datang di ViCafe</h1>
-            <p>Silahkan Pilih Akses Anda</p>
+            <h1>Selamat Datang di ☕ViCafe☕</h1>
+            <p class="subtitle">Tempat Terbaik untuk nongkrong & menikmati suasana</p>
             
             <div class="button-group">
                 <a href="<?= base_url('cafe') ?>" class="btn btn-pelanggan">Pelanggan</a>
@@ -28,7 +28,7 @@
 
     <style>
         .bg-wrapper {
-            background-image: url(https://i.pinimg.com/1200x/6e/ec/29/6eec294746c384ec1aa8c91ffe6cfa27.jpg) !important;
+            background-image: url('<?= base_url('assets/image/cafe.jpeg') ?>');
             background-size: cover; 
             background-position: center;
             background-attachment: fixed;
@@ -53,7 +53,17 @@
             width: 300px;
         }
 
-        h1 { margin-top: 0; color:  rgba(0, 0, 0, 0.62);}
+        h1{
+            margin-top: 0;
+            font-size: 32px;
+            color: #3e2723;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #3E2723;
+            margin-bottom: 10px;
+        }
         p { color:  rgba(0, 0, 0, 0.62);}
 
         .bg {

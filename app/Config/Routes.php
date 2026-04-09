@@ -4,7 +4,8 @@ use CodeIgniter\Route\RouteCollection;
 
 /**
  * @var RouteCollection $routes */
-$routes->get('/', 'Home::cafe');
+$routes->get('/', 'Home::index');
+$routes->get('/cafe', 'Home::cafe');
 $routes->get('/login', 'Home::login');
 $routes->post('auth', 'Home::auth');
 $routes->get('/dashboard', 'Home::dashboard');

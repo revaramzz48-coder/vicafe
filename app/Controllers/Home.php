@@ -2,14 +2,27 @@
 use App\Models\MenuModel;
 
 class Home extends BaseController {
-    public function index(): string { return view('welcome_message'); }
+    public function index()
+    { 
+        return view('home'); 
+    }
 
     public function cafe()
     {
         $menuModel = new MenuModel();
         $data['semua_menu'] = $menuModel->findAll();
 
-        return view('tampilan_cafe', $data);
+        return view('tampilan_menu', $data);
+    }
+
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function contact()
+    {
+        return view('contact');
     }
 
     public function login()

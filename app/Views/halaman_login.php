@@ -7,7 +7,6 @@
     <style>
         body, html { margin: 0; padding: 0; height: 100%; font-family: 'Segoe UI', sans-serif; }
         .bg-wrapper {
-            /* Perbaikan: linear-gradient pakai strip, bukan garis bawah */
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');
             background-size: cover;
             background-position: center;

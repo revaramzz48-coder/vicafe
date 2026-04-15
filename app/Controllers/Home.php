@@ -50,12 +50,20 @@ class Home extends BaseController {
     public function simpan_menu()
     {
         $model = new \App\Models\MenuModel();
-        $model->save([
+
+        $file = $this->request->getFile('gambar');
+
+        if ($file->isValid() && ! $file->hasMoved()) {
+            $namaFile = $file->getRandomName();
+            $file->move('uploads', $namaFile);
+
+            $model->save([
             'nama_menu' => $this->request->getPost('nama'),
             'harga' => $this->request->getPost('harga'),
             'kategori' => $this->request->getPost('kategori'),
+            'gambar' =>$namaFile
         ]);
-
+        }
         return redirect()->to('/dashboard');
     }
 

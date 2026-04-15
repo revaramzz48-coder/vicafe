@@ -11,11 +11,14 @@
 
     <h2 class="mb-4">Manajemen Menu ViCafe</h2>
 
-    <a href="<?= base_url('/cafe') ?>" class="btn btn-secondary btn-sm mb-3">Lihat Katalog Menu</a>
+    <a href="<?= base_url('menu') ?>" class="btn btn-secondary btn-sm mb-3">Lihat Katalog Menu</a>
 
-    <form action="<?= base_url('simpan_menu') ?>" method="post" class="row g-2 mb-4">
-        <div class="col-md-4">
+    <form action="<?= base_url('simpan_menu') ?>" method="post" enctype="multipart/form-data" class="row g-2 mb-4">
+        <div class="col-md-3">
             <input type="text" name="nama" class="form-control" placeholder="Nama Menu" required>
+        </div>
+        <div class="col-md-3">
+            <input type="file" name="gambar" class="form-control" required>
         </div>
         <div class="col-md-3">
             <input type="number" name="harga" class="form-control" placeholder="Harga" required>
@@ -27,7 +30,7 @@
                 <option value="Camilan">Camilan</option>
             </select>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
             <button class="btn btn-success w-100">Tambah</button>
         </div>
     </form>

@@ -12,7 +12,7 @@
             <div class="card menu-card h-100">
                 <div class="img-wrapper">
                     <img src="<?= base_url('public/uploads/'.$m['gambar']) ?>" class="card-img-top">
-                </div>
+                </div>  
 
                 <div class="card-body">
                     <span class="badge 

@@ -69,8 +69,15 @@ class Home extends BaseController {
 
     public function hapus_menu($id)
     {
-        $model = new \App\Models\MenuModel();
-        $model->delete($id);
-        return redirect()->to('/dashboard');
+            $model = new \App\Models\MenuModel();
+            $menu = $model->find($id);
+            if ($menu && !empty($menu['gambar'])) {
+                $path = ROOTPATH . 'public/uploads/' . $menu['gambar'];
+                if (file_exists($path)) {
+                    unlink($path);
+                    }
+                    }
+                    $model->delete($id);
+                    return redirect()->to('/dashboard');
+                    }
     }
-}

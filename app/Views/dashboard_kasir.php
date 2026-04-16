@@ -60,14 +60,16 @@
 
                             <div class="modal-header">
                                 <h5 class="modal-title">Konfirmasi</h5>
-                                
-                                <div class="modal-body">Yakin Ingin Menghapusnya?<strong><?= $m['nama_menu'] ?></strong></div>
-
-                                <div class="modal-footer">
-                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                    <a href="<?= base_url('hapus_menu/'.$m['id']) ?>" class="btn btn-danger">Hapus</a>
-                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                             </div>
+                            
+                            <div class="modal-body">                       
+                                Yakin ingin menghapus <strong><?= $m['nama_menu'] ?></strong>?
+                            </div>
+                            
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                <a href="<?= base_url('hapus_menu/'.$m['id']) ?>" class="btn btn-danger">Hapus</a>
                             </div>
                         </div>
                     </div>

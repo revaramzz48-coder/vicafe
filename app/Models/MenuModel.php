@@ -8,5 +8,5 @@ class MenuModel extends Model
 {
     protected $table      = 'menu';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['nama_menu', 'harga', 'kategori']; 
+    protected $allowedFields = ['nama_menu', 'harga', 'kategori','gambar']; 
 }

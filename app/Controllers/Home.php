@@ -8,13 +8,11 @@ class Home extends BaseController {
     }
 
     public function cafe()
-    {
-        $menuModel = new MenuModel();
-        $data['semua_menu'] = $menuModel->findAll();
-
-        return view('tampilan_menu', $data);
-    }
-
+{
+    $menuModel = new MenuModel();
+    $data['semua_menu'] = $menuModel->findAll();
+    return view('tampilan_menu', $data);
+}
     public function about()
     {
         return view('about');
@@ -47,25 +45,25 @@ class Home extends BaseController {
         return view('dashboard_kasir', $data);
     }
 
-    public function simpan_menu()
-    {
-        $model = new \App\Models\MenuModel();
+   public function simpan_menu()
+{
+    $model = new \App\Models\MenuModel();
+    $file = $this->request->getFile('gambar');
 
-        $file = $this->request->getFile('gambar');
+    if ($file->isValid() && !$file->hasMoved()) {
+        $namaFile = $file->getRandomName();
+        $file->move(ROOTPATH . 'public/uploads/', $namaFile);
 
-        if ($file->isValid() && ! $file->hasMoved()) {
-            $namaFile = $file->getRandomName();
-            $file->move('uploads', $namaFile);
-
-            $model->save([
+        $model->save([
             'nama_menu' => $this->request->getPost('nama'),
-            'harga' => $this->request->getPost('harga'),
-            'kategori' => $this->request->getPost('kategori'),
-            'gambar' =>$namaFile
+            'harga'     => $this->request->getPost('harga'),
+            'kategori'  => $this->request->getPost('kategori'),
+            'gambar'    => $namaFile
         ]);
-        }
-        return redirect()->to('/dashboard');
     }
+
+    return redirect()->to('/dashboard');
+}
 
     public function hapus_menu($id)
     {

@@ -78,4 +78,37 @@ class Home extends BaseController {
                     $model->delete($id);
                     return redirect()->to('/dashboard');
                     }
+
+     public function edit_menu($id)
+    {
+        $model = new \App\Models\MenuModel();
+        $data['menu'] = $model->find($id);
+        return view('edit_menu', $data);
+    }
+
+    public function update_menu($id)
+    {
+        $model = new \App\Models\MenuModel();
+        $file = $this->request->getFile('gambar');
+
+        if ($file->isValid() && !$file->hasMoved()) {
+            $namaFile = $file->getRandomName();
+            $file->move(ROOTPATH . 'public/uploads/', $namaFile);
+
+            $model->update($id, [
+                'nama_menu' => $this->request->getPost('nama'),
+                'harga'     => $this->request->getPost('harga'),
+                'kategori'  => $this->request->getPost('kategori'),
+                'gambar'    => $namaFile
+            ]);
+        } else {
+            $model->update($id, [
+                'nama_menu' => $this->request->getPost('nama'),
+                'harga'     => $this->request->getPost('harga'),
+                'kategori'  => $this->request->getPost('kategori')
+            ]);
+        }
+
+        return redirect()->to('/dashboard');
+    }
     }

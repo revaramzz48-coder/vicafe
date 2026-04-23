@@ -15,7 +15,7 @@
 
             <div class="card menu-card h-100">
                 <div class="img-wrapper">
-                    <img src="<?= base_url('uploads/'.$m['gambar']) ?>"> class="card-img-top" alt="<?= $m['nama_menu'] ?>" onerror="this.src='https://via.placeholder.com/400x300/161a1d/ffb703?text=ViCafe'">
+                    <img src="<?= base_url('uploads/'.$m['gambar']) ?>" class="card-img-top" alt="<?= $m['nama_menu'] ?>" onerror="this.src='https://via.placeholder.com/400x300/161a1d/ffb703?text=ViCafe'">
                     
                     <div class="category-badge 
                         <?= ($m['kategori'] == 'Makanan' || $m['kategori'] == 'Camilan') ? 'badge-food' : 'badge-drink' ?>">

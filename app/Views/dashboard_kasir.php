@@ -221,24 +221,7 @@
                                 <i class="fa-solid fa-trash"></i>
                             </button>
 
-                            <!-- Modal Hapus -->
-                            <div class="modal fade text-start" id="hapusModal<?= $m['id'] ?>" tabindex="-1">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title text-danger"><i class="fa-solid fa-triangle-exclamation me-2"></i> Konfirmasi Hapus</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                        </div>
-                                        <div class="modal-body py-4 text-center">
-                                            <p class="mb-0 fs-5">Yakin ingin menghapus menu <br><strong style="color: var(--accent-gold);"><?= $m['nama_menu'] ?></strong>?</p>
-                                        </div>
-                                        <div class="modal-footer justify-content-center">
-                                            <button type="button" class="btn btn-outline-light px-4" data-bs-dismiss="modal">Batal</button>
-                                            <a href="<?= base_url('hapus_menu/'.$m['id']) ?>" class="btn btn-danger px-4 shadow-glow">Ya, Hapus!</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -248,6 +231,28 @@
     </div>
 
 </div>
+
+<?php foreach($menu as $m): ?>
+<!-- Modal Hapus -->
+<div class="modal fade text-start" id="hapusModal<?= $m['id'] ?>" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger"><i class="fa-solid fa-triangle-exclamation me-2"></i> Konfirmasi Hapus</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body py-4 text-center">
+                <p class="mb-0 fs-5">Yakin ingin menghapus menu <br><strong style="color: var(--accent-gold);"><?= $m['nama_menu'] ?></strong>?</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-outline-light px-4" data-bs-dismiss="modal">Batal</button>
+                <a href="<?= base_url('hapus_menu/'.$m['id']) ?>" class="btn btn-danger px-4 shadow-glow">Ya, Hapus!</a>
+                <a href="<?= base_url('edit_menu/'.$m['id']) ?>" class="btn btn-danger px-4 shadow-glow">Edit</a>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endforeach; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

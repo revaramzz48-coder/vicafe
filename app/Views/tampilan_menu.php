@@ -30,9 +30,9 @@
                         <span class="price-tag">
                             Rp <?= number_format($m['harga'], 0, ',', '.') ?>
                         </span>
-                        <button class="btn btn-order rounded-circle">
+                        <a href="<?= base_url('tambah_keranjang/'. $m['id']) ?>" class="btn btn-order rounded-circle">
                             <i class="fa-solid fa-plus"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

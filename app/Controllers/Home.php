@@ -79,7 +79,7 @@ class Home extends BaseController {
                     return redirect()->to('/dashboard');
                     }
 
-     public function edit_menu($id)
+    public function edit_menu($id)
     {
         $model = new \App\Models\MenuModel();
         $data['menu'] = $model->find($id);
@@ -110,5 +110,43 @@ class Home extends BaseController {
         }
 
         return redirect()->to('/dashboard');
+    }
+
+    public function tambah_keranjang($id)
+    {
+        $model = new \App\Models\MenuModel();
+        $menu = $model->find($id);
+
+        $cart = session()->get('cart') ?? [];
+
+        if (isset($cart[$id])) {
+            $cart[$id]['qty']++;
+        } else {
+            $cart[$id] = [
+                'nama' => $menu['nama_menu'],
+                'harga' => $menu['harga'],
+                'gambar' => $menu['gambar'],
+                'qty' => 1
+            ];
+        }
+        session()->set('cart', $cart);
+
+        return redirect()->to('/keranjang');
+    }
+
+    public function keranjang()
+    {
+        return view('keranjang');
+    }
+
+    public function hapus_keranjang($id)
+    {
+        $cart = session()->get('cart');
+
+        unset($cart[$id]);
+
+        session()->set('cart', $cart);
+
+        return redirect()->to('/keranjang');
     }
     }

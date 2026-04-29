@@ -18,14 +18,14 @@
 
     <style>
         :root {
-            --bg-dark: #0b090a;
-            --bg-card: #161a1d;
-            --text-main: #f5f3f4;
-            --text-muted: #d3d3d3;
-            --accent-gold: #ffb703;
-            --accent-glow: rgba(255, 183, 3, 0.5);
-            --glass-bg: rgba(22, 26, 29, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --bg-dark: #F9F6F0; /* Background Utama (Soft Cream) */
+            --bg-card: #FFFFFF; /* Card Background */
+            --text-main: #4A443C; /* Teks Utama (Soft Dark Brown) */
+            --text-muted: #9A8C7F; /* Teks Muted */
+            --accent-gold: #DDA15E; /* Aksen Caramel Lembut */
+            --accent-glow: rgba(221, 161, 94, 0.4);
+            --glass-bg: rgba(249, 246, 240, 0.85);
+            --glass-border: rgba(74, 68, 60, 0.1);
         }
 
         body {
@@ -111,7 +111,7 @@
             background: var(--bg-dark);
         }
         ::-webkit-scrollbar-thumb {
-            background: #333;
+            background: #d4c8bd;
             border-radius: 5px;
         }
         ::-webkit-scrollbar-thumb:hover {

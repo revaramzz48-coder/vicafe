@@ -15,12 +15,22 @@
 
             <div class="card menu-card h-100">
                 <div class="img-wrapper">
-                    <img src="<?= base_url('uploads/'.$m['gambar']) ?>" class="card-img-top" alt="<?= $m['nama_menu'] ?>" onerror="this.src='https://via.placeholder.com/400x300/161a1d/ffb703?text=ViCafe'">
+                    <img src="<?= base_url('uploads/'.$m['gambar']) ?>" class="card-img-top" alt="<?= $m['nama_menu'] ?>" onerror="this.src='https://via.placeholder.com/400x300/FFFFFF/DDA15E?text=ViCafe'">
                     
                     <div class="category-badge 
-                        <?= ($m['kategori'] == 'Makanan' || $m['kategori'] == 'Camilan') ? 'badge-food' : 'badge-drink' ?>">
-                        <i class="fa-solid <?= ($m['kategori'] == 'Makanan' || $m['kategori'] == 'Camilan') ? 'fa-burger' : 'fa-mug-saucer' ?> me-1"></i>
-                        <?= $m['kategori'] ?>
+                    <?php 
+                        if ($m['kategori'] == 'Makanan') echo 'badge-food';
+                        elseif ($m['kategori'] == 'Camilan') echo 'badge-snack';
+                        else echo 'badge-drink';
+                    ?>">
+
+                    <i class="fa-solid
+                    <?php
+                        if ($m['kategori'] == 'Makanan') echo 'fa-burger';
+                        elseif ($m['kategori'] == 'Camilan') echo 'fa-pizza-slice';
+                        else echo 'fa-mug-saucer';
+                    ?> me-1"></i>
+                    <?= $m ['kategori'] ?>
                     </div>
                 </div>  
 
@@ -59,13 +69,13 @@
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .menu-card:hover {
     transform: translateY(-15px);
-    border-color: rgba(255, 183, 3, 0.3);
-    box-shadow: 0 20px 40px rgba(255, 183, 3, 0.15);
+    border-color: var(--accent-glow);
+    box-shadow: 0 20px 40px var(--accent-glow);
 }
 
 .img-wrapper {
@@ -116,10 +126,16 @@
     border: 1px solid rgba(230, 57, 70, 0.5);
 }
 
+.badge-snack {
+    background: rgba(221, 161, 94, 0.9);
+    color: white;
+    border: 1px solid var(--accent-gold);
+}
+
 .badge-drink {
-    background: rgba(255, 183, 3, 0.8);
-    color: #000;
-    border: 1px solid rgba(255, 183, 3, 0.5);
+    background: rgba(69, 123, 157, 0.9);
+    color: white;
+    border: 1px solid rgba(69, 123, 157, 0.5);
 }
 
 .card-body {
@@ -135,7 +151,7 @@
 }
 
 .btn-order {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.03);
     color: var(--text-main);
     border: 1px solid var(--glass-border);
     width: 45px;
@@ -148,7 +164,7 @@
 
 .menu-card:hover .btn-order {
     background: var(--accent-gold);
-    color: #000;
+    color: #fff;
     border-color: var(--accent-gold);
     transform: rotate(90deg);
 }

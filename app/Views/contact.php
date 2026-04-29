@@ -44,19 +44,14 @@
     padding: 10px;
     border: 1px solid var(--glass-border);
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
     position: relative;
     overflow: hidden;
 }
 
 .map-container iframe {
     border-radius: 12px;
-    filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(85%);
     transition: filter 0.5s ease;
-}
-
-.map-container:hover iframe {
-    filter: invert(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
 .location-card {
@@ -70,13 +65,13 @@
 .icon-box {
     width: 60px;
     height: 60px;
-    background: rgba(255, 183, 3, 0.1);
+    background: var(--accent-glow);
     color: var(--accent-gold);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 183, 3, 0.3);
+    border: 1px solid var(--accent-gold);
 }
 
 @keyframes fadeInUp {

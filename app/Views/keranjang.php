@@ -28,6 +28,8 @@
                     <td><?= $item['qty']?></td>
                     <td>Rp <?= number_format($subtotal) ?></td>
                     <td>
+                        <a href="<?= base_url('checkout') ?>"
+                        class="btn btn-success">Checkout</a>
                         <a href="<?= base_url('hapus_keranjang/'.$id) ?>"
                         class="btn btn-danger btn-sm">Hapus</a>
                     </td>

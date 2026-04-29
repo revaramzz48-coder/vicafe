@@ -16,14 +16,14 @@
 
     <style>
         :root {
-            --bg-dark: #0b090a;
-            --bg-card: #161a1d;
-            --text-main: #f5f3f4;
-            --text-muted: #a4a4a4;
-            --accent-gold: #ffb703;
-            --accent-glow: rgba(255, 183, 3, 0.4);
-            --glass-bg: rgba(22, 26, 29, 0.8);
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --bg-dark: #F9F6F0; /* Background Utama (Soft Cream) */
+            --bg-card: #FFFFFF; /* Card Background */
+            --text-main: #4A443C; /* Teks Utama (Soft Dark Brown) */
+            --text-muted: #9A8C7F; /* Teks Muted */
+            --accent-gold: #DDA15E; /* Aksen Caramel Lembut */
+            --accent-glow: rgba(221, 161, 94, 0.4);
+            --glass-bg: rgba(249, 246, 240, 0.85);
+            --glass-border: rgba(74, 68, 60, 0.1);
             --danger-glow: rgba(220, 53, 69, 0.4);
         }
 
@@ -52,21 +52,21 @@
             border: 1px solid var(--glass-border);
             border-radius: 15px;
             padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             margin-bottom: 2rem;
         }
 
         .form-control, .form-select {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.03);
             border: 1px solid var(--glass-border);
-            color: #ffffff;
+            color: var(--text-main);
             border-radius: 8px;
         }
 
         .form-control:focus, .form-select:focus {
-            background-color: rgba(255, 255, 255, 0.15);
+            background-color: rgba(0, 0, 0, 0.05);
             border-color: var(--accent-gold);
-            color: #ffffff;
+            color: var(--text-main);
             box-shadow: 0 0 10px var(--accent-glow);
         }
 
@@ -76,14 +76,14 @@
 
         .btn-gold {
             background: var(--accent-gold);
-            color: #000;
+            color: #fff;
             border: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .btn-gold:hover {
-            background: #fb8500;
+            background: #BC6C25;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px var(--accent-glow);
         }
@@ -95,14 +95,14 @@
 
         .table>:not(caption)>*>* {
             background-color: transparent;
-            color: #ffffff;
+            color: var(--text-main);
             border-bottom-color: var(--glass-border);
             padding: 1rem;
         }
 
         .table-hover tbody tr:hover {
-            background-color: rgba(255, 255, 255, 0.03);
-            color: var(--accent-gold);
+            background-color: rgba(0, 0, 0, 0.03);
+            color: var(--text-main);
         }
 
         .badge-kategori {
@@ -111,8 +111,8 @@
             font-weight: 700;
             font-size: 0.85rem;
             letter-spacing: 0.5px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             text-shadow: none;
         }
 
@@ -145,7 +145,7 @@
         }
         
         .btn-close {
-            filter: invert(1) grayscale(100%) brightness(200%);
+            /* Black close button for light theme */
         }
     </style>
 </head>
@@ -209,9 +209,9 @@
                         <td>
                             <?php 
                                 $badgeStyle = '';
-                                if ($m['kategori'] == 'Makanan') $badgeStyle = 'background-color: #e63946; color: white;';
-                                else if ($m['kategori'] == 'Minuman') $badgeStyle = 'background-color: #4cc9f0; color: #000;';
-                                else if ($m['kategori'] == 'Camilan') $badgeStyle = 'background-color: #ffb703; color: #000;';
+                                if ($m['kategori'] == 'Makanan') $badgeStyle = 'background-color: rgba(230, 57, 70, 0.8); color: white;';
+                                else if ($m['kategori'] == 'Minuman') $badgeStyle = 'background-color: rgba(69, 123, 157, 0.9); color: white;';
+                                else if ($m['kategori'] == 'Camilan') $badgeStyle = 'background-color: rgba(221, 161, 94, 0.9); color: white;';
                             ?>
                             <span class="badge-kategori" style="<?= $badgeStyle ?>"><?= $m['kategori'] ?></span>
                         </td>

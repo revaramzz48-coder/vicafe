@@ -4,9 +4,9 @@
     <div class="hero-overlay"></div>
     
     <div class="hero-content position-relative z-1" style="animation: fadeInUp 1s ease-out;">
-        <span class="badge bg-glass text-uppercase tracking-wider mb-3 px-3 py-2 rounded-pill"><i class="fa-solid fa-fire text-warning me-2"></i>Premium Quality</span>
+        <span class="badge bg-glass text-uppercase tracking-wider mb-3 px-3 py-2 rounded-pill text-dark"><i class="fa-solid fa-fire text-warning me-2"></i>Premium Quality</span>
         
-        <h1 class="display-2 fw-bolder mb-3 hero-title">
+        <h1 class="display-2 fw-bolder mb-3 hero-title" style="color: var(--text-main);">
             Awaken Your <br> <span class="text-gradient">Senses</span>
         </h1>
         
@@ -15,10 +15,10 @@
         </p>
         
         <div class="d-flex justify-content-center gap-3">
-            <a href="<?= base_url('menu') ?>" class="btn btn-gold btn-lg px-5 py-3 rounded-pill fw-bold shadow-glow">
+            <a href="<?= base_url('menu') ?>" class="btn btn-gold btn-lg px-5 py-3 rounded-pill fw-bold shadow-glow text-white">
                 Explore Menu
             </a>
-            <a href="<?= base_url('about') ?>" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-bold glass-btn">
+            <a href="<?= base_url('about') ?>" class="btn btn-lg px-5 py-3 rounded-pill fw-bold glass-btn">
                 Our Story
             </a>
         </div>
@@ -38,13 +38,13 @@
     .hero-overlay {
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
-        background: linear-gradient(135deg, rgba(11, 9, 10, 0.9) 0%, rgba(22, 26, 29, 0.6) 100%);
+        background: linear-gradient(135deg, rgba(249, 246, 240, 0.85) 0%, rgba(255, 255, 255, 0.6) 100%);
     }
 
     .bg-glass {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.6);
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.8);
         color: var(--text-main);
     }
 
@@ -53,48 +53,49 @@
     }
 
     .hero-title {
-        text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        text-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
 
     .text-gradient {
-        background: linear-gradient(45deg, #ffb703, #fb8500);
+        background: linear-gradient(45deg, var(--accent-gold), #BC6C25);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-shadow: none;
     }
 
     .text-light-50 {
-        color: rgba(245, 243, 244, 0.7);
+        color: rgba(74, 68, 60, 0.8) !important;
     }
 
     .btn-gold {
         background: var(--accent-gold);
-        color: #000;
+        color: #fff;
         border: none;
         transition: all 0.3s ease;
     }
 
     .btn-gold:hover {
-        background: #fb8500;
+        background: #BC6C25;
         color: #fff;
         transform: translateY(-5px);
         box-shadow: 0 15px 25px var(--accent-glow);
     }
 
     .shadow-glow {
-        box-shadow: 0 10px 20px rgba(255, 183, 3, 0.3);
+        box-shadow: 0 10px 20px rgba(221, 161, 94, 0.3);
     }
 
     .glass-btn {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        color: var(--text-main);
         transition: all 0.3s ease;
     }
 
     .glass-btn:hover {
-        background: rgba(255, 255, 255, 0.15);
-        color: #fff;
+        background: rgba(255, 255, 255, 0.8);
+        color: var(--text-main);
         transform: translateY(-5px);
     }
 

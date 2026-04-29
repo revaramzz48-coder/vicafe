@@ -1,5 +1,7 @@
 <?php namespace App\Controllers;
 use App\Models\MenuModel;
+use App\Models\PelangganModel;
+use App\Models\PesananModel;
 
 class Home extends BaseController {
     public function index()
@@ -45,7 +47,7 @@ class Home extends BaseController {
         return view('dashboard_kasir', $data);
     }
 
-   public function simpan_menu()
+    public function simpan_menu()
 {
     $model = new \App\Models\MenuModel();
     $file = $this->request->getFile('gambar');
@@ -149,4 +151,94 @@ class Home extends BaseController {
 
         return redirect()->to('/keranjang');
     }
+
+    public function login_pelanggan()
+    {
+        return view('login_pelanggan');
     }
+
+    public function cek_login_pelanggan()
+    {
+        $model = new PelangganModel();
+
+        $user = $model->where('no_hp', $this->request->getPost('no_hp'))->first();
+
+        if ($user && password_verify($this->request->getPost('password'), $user['password'])) {
+            session()->set('pelanggan', [
+                'id' => $user['id'],
+                'nama' => $user['nama'],
+                'no_hp' => $user['no_hp'],
+                'alamat' => $user['alamat']
+            ]);
+
+            return redirect()->to('/keranjang');
+        }
+        return redirect()->back()->with('error', 'Login gagal');
+    }
+
+    public function register()
+    {
+        return view('register');
+    }
+
+    public function simpan_register()
+    {
+        $model = new PelangganModel();
+
+        $model->save([
+            'nama' => $this->request->getPost('nama'),
+            'no_hp' => $this->request->getPost('no_hp'),
+            'password' => password_hash ($this->request->getPost('password'), PASSWORD_DEFAULT),
+            'alamat' => $this->request->getPost('alamat'),
+        ]);
+
+        return redirect()->to('/login_pelanggan');
+    }
+
+    public function logout_pelanggan()
+    {
+        session()->remove('pelanggan');
+        return redirect()->to('/');
+    }
+
+    public function checkout()
+    {
+        if (!session()->get('pelanggan')) {
+            return redirect()->to('/login_pelanggan');
+        }
+        return view('checkout');
+    }
+
+    public function proses_checkout()
+    {
+        $user = session()->get('pelanggan');
+        $cart = session()->get('cart');
+        
+        if (!$user || !$cart) {
+            return redirect()->to('/');
+            }
+            $total = 0;
+            foreach($cart as $item){
+                $total += $item['harga'] * $item['qty'];
+                }
+                
+                $model = new PesananModel();
+                
+                $model->save([
+                    'pelanggan_id' => $user['id'],
+                    'nama' => $user['nama'],
+                    'no_hp' => $user['no_hp'],
+                    'alamat' => $this->request->getPost('alamat'),
+                    'total' => $total,
+                    'status' => 'Menunggu'
+                    ]);
+                    
+                    session()->remove('cart');
+                    return redirect()->to('/order_sukses');
+                    }
+
+    public function order_sukses()
+    {
+        return view('order_sukses');
+    }
+}

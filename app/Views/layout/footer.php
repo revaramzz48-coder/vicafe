@@ -3,13 +3,13 @@
 <footer class="mt-auto py-4 text-center">
     <div class="container">
         <div class="mb-3">
-            <a href="#" class="text-main me-3 fs-5 hover-gold"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="text-main me-3 fs-5 hover-gold"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="text-main fs-5 hover-gold"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://wa.me/+6281337967025" target="_blank" class="text-main me-3 fs-5 hover-gold"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/knightramzz?igsh=eXQ3cGh6cnZ1YnIx" target="_blank" class="text-main me-3 fs-5 hover-gold"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1JQ3CxsoR6/" target="_blank" class="text-main me-3 fs-5 hover-gold"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://vm.tiktok.com/ZS9Ngv3MJedUR-dynwn/" target="_blank" class="text-main fs-5 hover-gold"><i class="fa-brands fa-tiktok"></i></a>
         </div>
         <p class="mb-0 text-main" style="font-size: 1rem; letter-spacing: 0.5px;">
             &copy; 2026 ViCafe | Ngopi Santai, Kerja Nyaman. <br>
-            <span class="text-gold" style="color: var(--accent-gold);"><i class="fa-solid fa-bolt text-warning me-1"></i> Brewed with passion</span>
         </p>
     </div>
 </footer>

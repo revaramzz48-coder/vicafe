@@ -4,8 +4,6 @@
     <div class="hero-overlay"></div>
     
     <div class="hero-content position-relative z-1" style="animation: fadeInUp 1s ease-out;">
-        <span class="badge bg-glass text-uppercase tracking-wider mb-3 px-3 py-2 rounded-pill text-dark"><i class="fa-solid fa-fire text-warning me-2"></i>Premium Quality</span>
-        
         <h1 class="display-2 fw-bolder mb-3 hero-title" style="color: var(--text-main);">
             Awaken Your <br> <span class="text-gradient">Senses</span>
         </h1>

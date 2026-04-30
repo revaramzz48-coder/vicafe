@@ -241,4 +241,31 @@ class Home extends BaseController {
     {
         return view('order_sukses');
     }
+
+    public function pesanan_admin()
+    {
+        $model = new \App\Models\PesananModel();
+        $data['pesanan'] = $model->orderBy('id', 'DESC')->findAll();
+
+        return view('pesanan_admin', $data);
+    }
+
+    public function ubah_status($id, $status)
+    {
+        $model = new \App\Models\PesananModel();
+        $model->update($id, ['status' => $status ]);
+
+        return redirect()->to('pesanan_admin');
+    }
+
+    public function hapus_pesanan($id)
+    {
+        $cart = session()->get('cart');
+
+        unset($cart[$id]);
+
+        session()->set('cart', $cart);
+
+        return redirect()->to('pesanan_admin');
+    }
 }

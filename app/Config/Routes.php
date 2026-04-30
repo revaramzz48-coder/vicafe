@@ -26,3 +26,6 @@ $routes->get('logout_pelanggan', 'Home::logout_pelanggan');
 $routes->get('checkout', 'Home::checkout');
 $routes->post('proses_checkout', 'Home::proses_checkout');
 $routes->get('order_sukses', 'Home::order_sukses');
+$routes->get('pesanan_admin', 'Home::pesanan_admin');
+$routes->get('status/(:num)/(:any)', 'Home::ubah_status/$1/$2');
+$routes->get('hapus_pesanan/(:num)', 'Home::hapus_pesanan/$1');

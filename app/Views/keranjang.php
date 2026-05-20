@@ -31,7 +31,7 @@
                         <a href="<?= base_url('checkout') ?>"
                         class="btn btn-success">Checkout</a>
                         <a href="<?= base_url('hapus_keranjang/'.$id) ?>"
-                        class="btn btn-danger btn-sm">Hapus</a>
+                        class="btn btn-danger">Hapus</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

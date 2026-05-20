@@ -12,9 +12,8 @@
             <div class="glass-container p-5 text-center">
                 <i class="fa-solid fa-quote-left fs-1 mb-4 opacity-50" style="color: var(--accent-gold);"></i>
                 <p class="fs-5 lh-lg text-light-50 fw-light">
-                    ViCafe is your ultimate sanctuary—a space crafted for comfort, creativity, and connection. 
-                    Whether you're seeking a cozy spot to work, a photogenic backdrop for your feed, or simply the perfect cup of coffee, we've got you covered. 
-                    Embrace the Gen-Z aesthetic, savor our curated selection of coffee and non-coffee beverages, and indulge in our delightful bites.
+                    Welcome to ViCafe - where aesthetic meets comfort.
+                    Designed for workers, creators, and coffee lovers, ViCafe offers the perfect blend of cozy ambiance, curated drinks, and Instagram-worthy corners made for every mood and moment.
                 </p>
                 <div class="mt-4 pt-4 border-top border-secondary opacity-75">
                     <span class="badge px-3 py-2 rounded-pill mx-1 custom-badge">Aesthetic</span>

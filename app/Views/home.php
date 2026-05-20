@@ -5,11 +5,11 @@
     
     <div class="hero-content position-relative z-1" style="animation: fadeInUp 1s ease-out;">
         <h1 class="display-2 fw-bolder mb-3 hero-title" style="color: var(--text-main);">
-            Awaken Your <br> <span class="text-gradient">Senses</span>
+            <br> <span class="text-gradient">ViCafe</span>
         </h1>
         
         <p class="lead mb-5 text-light-50 fw-light mx-auto" style="max-width: 600px;">
-            Step into a world where every cup tells a story. Experience the perfect blend of aesthetic vibes, cozy ambiance, and masterfully crafted coffee.
+            Tempat menikmati kopi, berbagi cerita, dan menemukan ketenangan di hari yang indah.
         </p>
         
         <div class="d-flex justify-content-center gap-3">

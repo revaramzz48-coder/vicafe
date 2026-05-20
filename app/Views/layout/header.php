@@ -18,11 +18,11 @@
 
     <style>
         :root {
-            --bg-dark: #F9F6F0; /* Background Utama (Soft Cream) */
-            --bg-card: #FFFFFF; /* Card Background */
-            --text-main: #4A443C; /* Teks Utama (Soft Dark Brown) */
-            --text-muted: #9A8C7F; /* Teks Muted */
-            --accent-gold: #DDA15E; /* Aksen Caramel Lembut */
+            --bg-dark: #F9F6F0; 
+            --bg-card: #FFFFFF; 
+            --text-main: #4A443C; 
+            --text-muted: #9A8C7F; 
+            --accent-gold: #DDA15E; 
             --accent-glow: rgba(221, 161, 94, 0.4);
             --glass-bg: rgba(249, 246, 240, 0.85);
             --glass-border: rgba(74, 68, 60, 0.1);
@@ -142,6 +142,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('contact') ?>">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('keranjang') ?>">Keranjang</a>
                 </li>
             </ul>
         </div>
